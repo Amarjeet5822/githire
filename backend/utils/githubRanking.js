@@ -2,6 +2,7 @@ const axios = require("axios");
 
 // 🔹 AI-Based Ranking Function
 const calculateScore = async (githubId) => {
+  
   try {
     const response = await axios.get(`https://api.github.com/users/${githubId}`);
     const repos = await axios.get(`https://api.github.com/users/${githubId}/repos`);
