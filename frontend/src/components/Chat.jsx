@@ -3,6 +3,7 @@ import axios from "axios";
 import socket from "../socket";
 
 const Chat = ({ userId, receiverId }) => {
+
   const [messages, setMessages] = useState([]);
   const [message, setMessage] = useState("");
 
@@ -24,12 +25,10 @@ const Chat = ({ userId, receiverId }) => {
   // Send Message
   const sendMessage = () => {
     if (!message.trim()) return;
-
     const newMessage = { senderId: userId, receiverId, message };
     axios.post("http://localhost:5000/api/messages", newMessage);
     setMessages([...messages, newMessage]);
     socket.emit("sendNotification", { receiverId, message });
-
     setMessage("");
   };
 
