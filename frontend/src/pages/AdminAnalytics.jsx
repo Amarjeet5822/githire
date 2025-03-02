@@ -4,6 +4,7 @@ import { Bar, Pie } from "react-chartjs-2";
 import "chart.js/auto";
 
 const AdminAnalytics = () => {
+  
   const [analytics, setAnalytics] = useState(null);
   // get token then you put it in Bearer token
   useEffect(() => {

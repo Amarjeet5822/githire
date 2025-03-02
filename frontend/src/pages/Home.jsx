@@ -5,6 +5,7 @@ import axios from "axios";
 import LoginButton from "../components/LoginButton";
 
 const Home = () => {
+
   const { user } = useAuth();
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -30,8 +31,8 @@ const Home = () => {
   return (
     <div className="p-8 text-center">
       <h1 className="text-2xl font-bold mb-4">GitRoll Matcher</h1>
-
-      {user ? (
+      {
+      user ? (
         <>
           <p>Welcome, {user.username}!</p>
           <button
